@@ -6,10 +6,13 @@ import java.util.HashSet;
 
 public class ListVsSetSpeedTest
 {
-
-
     public static void main(String[] args)
     {
+
+        System.out.println("TIP : Set is unordered and contains different elements,\n");
+        System.out.println("whereas the list is ordered and can contain the same elements in it\n");
+        System.out.println("This is the main reason about the different speeds between Set and List\n\n\n\n");
+
         new Thread( () -> {
             testArrayList();
         }).start();
@@ -19,48 +22,45 @@ public class ListVsSetSpeedTest
         }).start();
     }
 
-
-
-
     public static void testArrayList()
     {
-        Collection<Integer> numeros = new ArrayList<Integer>();
+        Collection<Integer> numbers = new ArrayList<Integer>();
 
-        long inicio = System.currentTimeMillis();
+        long begin = System.currentTimeMillis();
 
         for (int i = 1; i <= 200000; i++) {
-            numeros.add(i);
+            numbers.add(i);
         }
 
-        for (Integer numero : numeros) {
-            numeros.contains(numero);
+        for (Integer numero : numbers) {
+            numbers.contains(numero);
         }
 
-        long fim = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
 
-        long tempoDeExecucao = fim - inicio;
+        long elapsed = end - begin;
 
-        System.out.println("ArrayList time elapsed: " + tempoDeExecucao);
+        System.out.println("ArrayList time elapsed: " + elapsed);
     }
 
     public static void testHashSet()
     {
-        Collection<Integer> numeros = new HashSet<Integer>();
+        Collection<Integer> numbers = new HashSet<Integer>();
 
-        long inicio = System.currentTimeMillis();
+        long begin = System.currentTimeMillis();
 
         for (int i = 1; i <= 200000; i++) {
-            numeros.add(i);
+            numbers.add(i);
         }
 
-        for (Integer numero : numeros) {
-            numeros.contains(numero);
+        for (Integer numero : numbers) {
+            numbers.contains(numero);
         }
 
-        long fim = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
 
-        long tempoDeExecucao = fim - inicio;
+        long elapsed = end - begin;
 
-        System.out.println("HashSet time elapsed : " + tempoDeExecucao);
+        System.out.println("HashSet time elapsed : " + elapsed);
     }
 }
