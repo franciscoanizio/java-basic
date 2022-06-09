@@ -28,4 +28,9 @@ public class Pet
     {
         return "Pet [ name = "+name+", breed = "+this.breed+", kilogrammes = "+this.kilogrammes+", color = "+color+" ];";
     }
+
+    public String getName()
+    {
+        return this.name;
+    }
 }

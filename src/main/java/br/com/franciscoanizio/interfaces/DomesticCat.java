@@ -1,6 +1,7 @@
 package br.com.franciscoanizio.interfaces;
 
 import br.com.franciscoanizio.polymorphism.Cat;
+import br.com.franciscoanizio.polymorphism.Pet;
 
 public class DomesticCat extends Cat implements DomesticPet
 {
@@ -10,20 +11,50 @@ public class DomesticCat extends Cat implements DomesticPet
     }
 
     @Override
-    public void trick()
+    public void trick(Pet p)
     {
-        DomesticPet.heartBeat();
-        System.out.println("Scratch");
-        System.out.println("Scratch");
-        System.out.println("Scratch");
-        System.out.println("Scratch");
+        DomesticPet.heartBeat(p,"trick");
+
+            System.out.println(p.getName() + " Scratch");
+            DomesticPet.breath();
+            System.out.println(p.getName() + " Hiking");
+            DomesticPet.breath();
+            System.out.println(p.getName() + " Scratch");
+            DomesticPet.breath();
+            System.out.println(p.getName() + " Scratch");
+
     }
 
     @Override
-    public void feed()
+    public void feed(Pet p)
     {
-        DomesticPet.heartBeat();
-        System.out.println("Drink milk !");
+        DomesticPet.heartBeat(p,"feed");
+
+        System.out.println(p.getName() + "Drink milk !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Drinking ... !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Drinking ... !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Drinking ... !");
+
+        System.out.println(p.getName() + "Drink milk !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Drinking ... !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Drinking ... !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Drinking ... !");
+        DomesticPet.breath();
+
+        System.out.println(p.getName() + "Eat food !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Eating ... !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Eating ... !");
+        DomesticPet.breath();
+        System.out.println(p.getName() + "Eating ... !");
+        DomesticPet.breath();
 
     }
 }
