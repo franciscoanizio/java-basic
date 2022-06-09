@@ -1,4 +1,4 @@
-package br.com.franciscoanizio;
+package br.com.franciscoanizio.collections;
 
 import java.util.*;
 
